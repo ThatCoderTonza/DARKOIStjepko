@@ -1,6 +1,13 @@
-Ime: //
+Lobby: Max 5 ljudi   ---> Darcek
 
-Lobby: da
-Friends: da
-Inventory: u lobby-u ce izabrat koje weapone hoce
-gunovi: glock19, M4, AK47, MP5, neki snajperi, itd.
+Inventory: 3 weapona i jedan dodatak (grenade il neš) -----> Stjepan
+
+Movement: skakanje, crouchanje, slide...  -----> Darcek
+
+Puške i bombe i sl. ------> Stjepan
+
+UI -----> Darcek
+
+Multiplayer -----> Stjepan
+
+Gamemodes ------ > Darcek
