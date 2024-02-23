@@ -38,6 +38,3 @@ public class MoveMentScript : MonoBehaviour
 		}
 	}
 }
-
-
-// stjepko sekso bi te
