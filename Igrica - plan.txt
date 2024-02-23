@@ -1,0 +1,6 @@
+Ime: //
+
+Lobby: da
+Friends: da
+Inventory: u lobby-u ce izabrat koje weapone hoce
+gunovi: glock19, M4, AK47, MP5, neki snajperi, itd.
