@@ -5,7 +5,7 @@ using System;
 
 public class CameraScript : MonoBehaviour
 {
-
+        /////bfabfafafsfasfsdfsfafasd
 	// Variables
 	//player
 	public Transform player;
