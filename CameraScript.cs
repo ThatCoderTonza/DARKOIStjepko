@@ -5,7 +5,7 @@ using System;
 
 public class CameraScript : MonoBehaviour
 {
-        /////bfabfafafsfasfsdfsfafasd
+
 	// Variables
 	//player
 	public Transform player;
@@ -63,13 +63,10 @@ public class CameraScript : MonoBehaviour
 				player.transform.eulerAngles = new Vector3(0, transform.localEulerAngles.y, 0);
 				//rotira kameru
 				transform.eulerAngles = new Vector3(cameraVerticalRotation, transform.eulerAngles.y + inputX, 0);
-				Debug.Log(inputX);
-				Debug.Log("+:    " + transform.eulerAngles.y + inputX);
-				Debug.Log("transfrom:     " + transform.eulerAngles.y);
 				//rotira playera kao kameru
 				
 				//smješta kameru
-				transform.localPosition = new Vector3(0, 1f, 0f);
+				transform.localPosition = new Vector3(0, 1f, 0);
 			}
 			
 			
