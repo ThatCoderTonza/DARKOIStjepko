@@ -8,7 +8,7 @@ Puške i bombe i sl. ------> Stjepan
 
 UI -----> Darcek
 
-Multiplayer -----> Stjepan
+AI -----> Stjepan
 
 Gamemodes ------ > Darcek
 
