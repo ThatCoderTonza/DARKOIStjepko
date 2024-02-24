@@ -33,6 +33,8 @@ public class Sniper1Shoot : MonoBehaviour
     public GameObject weapon_place;
     //weapon place top
     public GameObject weapon_place_top;
+    //kamera
+    public GameObject camera;
 
 
     void Start()
@@ -52,7 +54,7 @@ public class Sniper1Shoot : MonoBehaviour
         //puška dolazi na vrh tog štapa
         Sniper.transform.position = weapon_place_top.transform.position;
         //puškina rotacija uvijek mora bit 0 da puca ravno
-        Sniper.transform.localEulerAngles = new Vector3(0, player.transform.eulerAngles.y, 0);
+        Sniper.transform.localEulerAngles = new Vector3(camera.transform.eulerAngles.x, player.transform.eulerAngles.y, 0);
         ///rotiranje štapa da puška uvijek stoji blizu playera
         weapon_place.transform.localEulerAngles = new Vector3(0, player.transform.eulerAngles.y + (Mathf.Asin((player.transform.localScale.x / 2 + Sniper.transform.localScale.x / 2) / c) * 180 / MathF.PI), 0);
         
@@ -79,16 +81,14 @@ public class Sniper1Shoot : MonoBehaviour
             }    
         }
 
-
-
+        
+        Debug.DrawRay(camera.transform.position, transform.TransformDirection(Vector3.forward) * 1000f, Color.yellow);
         if (BulletCreated == true) 
         {
             for (int i = 0; i < BulletIndex; i++) 
             {
-                //Debug.Log(i);
-                //Debug.Log(Bullet[i]);
                 //kretanje bulleta
-                Bullet[i].transform.Translate(Vector3.forward * 1f);
+                Bullet[i].transform.Translate(Vector3.forward * 10f);
 
                 //provjera bi li se bullet trebao destroyat
                 if (Vector3.Distance(Bullet[i].transform.position, Sniper.transform.position) >= 1000) 
@@ -100,7 +100,6 @@ public class Sniper1Shoot : MonoBehaviour
                             Bullet[i].gameObject.tag = "DestroyBullet";
                         }
                         Bullet[i] = empty;
-                        Debug.Log(Bullet[i]);
                     }
                 }
             }
@@ -116,7 +115,7 @@ public class Sniper1Shoot : MonoBehaviour
         Bullet[BulletIndex] = Instantiate(BulletPrefab, Sniper.transform.position, Sniper.transform.rotation);
         //Debug.Log(Bullet[BulletIndex]);
         //STARTNA POZICIJA
-        Bullet[BulletIndex].transform.position = Sniper.transform.position;
+        Bullet[BulletIndex].transform.position = camera.transform.position;
         
         //POVEĆA SE INDEX KAKO BI SE MOGAO STVORITI NOVI BULLET
         BulletIndex++;
@@ -128,6 +127,18 @@ public class Sniper1Shoot : MonoBehaviour
         if (BulletIndex >= 30) 
         {
             BulletIndex = 0;
+        }
+
+
+        //STVARA RAY (ZRAKU) KOJA PROVJERAVA JELI BULLET DIRA NEKAJ
+        if (Physics.Raycast(camera.transform.position, transform.TransformDirection(Vector3.forward) * 1000f, out RaycastHit hit))
+        {
+            if (hit.collider.name == "Cube") 
+            {
+                hit.transform.position = new Vector3(1000f, 1000f, 1000f);
+            }
+            //Debug.Log(hit.collider.name);
+            
         }
     }
 }
