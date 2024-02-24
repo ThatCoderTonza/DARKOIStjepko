@@ -11,3 +11,8 @@ UI -----> Darcek
 Multiplayer -----> Stjepan
 
 Gamemodes ------ > Darcek
+
+tema
+-ti si specijalac koji ide sa svojim timom raditi na kompliciranim slucajevima
+svaki put kada uspjesno rijesis neki dobijes xp koji ti treba za levele i sa levelima upgradeas svoj tim, opremu i oruzje
+misije mogu biti tipa of toga da je netko kindapiran npr. neki politicar i sl. ili da trebas zaustaviti neke teroriste.
