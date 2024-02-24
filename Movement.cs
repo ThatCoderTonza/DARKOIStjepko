@@ -14,11 +14,8 @@ public class Movement : MonoBehaviour
     public float AirMultiplier;
     bool ReadyToJump;
 
-    [Header("Keybinds")]
-    public KeyCode JumpKey = KeyCode.Space;
-
     [Header("Ground Check")]
-    public float PlayerHeight;
+    float PlayerHeight;
     public LayerMask WhatIsGround;
     bool Grounded;
 
@@ -36,6 +33,7 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         ReadyToJump = true;
+        PlayerHeight = transform.localScale.y;
     }
 
     private void Update()
@@ -64,7 +62,7 @@ public class Movement : MonoBehaviour
         verticalInput = Input.GetAxisRaw("Vertical");
 
         //Kada skociti
-        if(Input.GetKey(JumpKey) && ReadyToJump && Grounded)
+        if(Input.GetKey(KeyCode.Space) && ReadyToJump && Grounded)
         {
             ReadyToJump = false;
 
